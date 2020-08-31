@@ -1,0 +1,14 @@
+<h3 class="text-center text-danger">{{ name }}</h3>
+<div class="container">
+  <div class="row">
+    <input type="number" [(ngModel)]="a">xˆ2 +
+    <input type="number" [(ngModel)]="b">y +
+    <input type="number" [(ngModel)]="c"> <button [class.d-none]="a == null || b == null || c == null" type="button" [disabled]="a == null || b == null || c == null" (click)="tinh()">=</button>
+      <div class="col-md-12">
+        x1 = {{ x1 }} ; x2 = {{ x2 }}
+      </div>
+
+  </div>
+</div>
+
+<app-test-ng></app-test-ng>

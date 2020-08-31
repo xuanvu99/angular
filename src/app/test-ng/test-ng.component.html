@@ -1,0 +1,9 @@
+<h1 class="text-center" [ngClass]="changeColor">Vũ đẹp trai</h1>
+<div class="container">
+  <div>
+    <input type="text" [(ngModel)]="box">
+    <h1 class="text-center" [ngClass]="box.length % 2 == 0 ? 'text-success' : 'text-warning'">Vũ đẹp trai</h1>
+    <div [style.color]="box.length % 2 != 0 ?'red':'black'">ahaha</div>
+    <div [ngStyle]="box.length % 2 != 0 ? a : b">ahihi</div>
+  </div>
+</div>

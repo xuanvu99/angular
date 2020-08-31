@@ -1,0 +1,6 @@
+<!--<input type="number" [(ngModel)]="a">-->
+<!--<button (click)="them()">them</button>-->
+<!--<button (click)="bot()">bot</button>-->
+<ng-container *ngFor="let item of arrName">
+  <app-ng-for [ten]="item.ten" [tuoi]="item.tuoi" (click)="removeName($event)"></app-ng-for>
+</ng-container>
