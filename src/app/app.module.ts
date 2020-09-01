@@ -1,6 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const routesConFig: Routes = [
+  { path: 'contacts/:id', component: ContactsComponent },
+  { path: '', component: ContactsComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: '**', component: NotpageComponent }
+];
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +29,9 @@ import { NgPipesComponent } from './ng-pipes/ng-pipes.component';
 import { NgServiceComponent } from './ng-service/ng-service.component';
 import { Buoi5Component } from './buoi5/buoi5.component';
 import { NgFormComponent } from "./ng-form/ng-form.component";
+import { ContactsComponent } from './contacts/contacts.component';
+import { CategoryComponent } from './category/category.component';
+import { NotpageComponent } from './notpage/notpage.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +51,16 @@ import { NgFormComponent } from "./ng-form/ng-form.component";
     NgServiceComponent,
     Buoi5Component,
     NgFormComponent,
+    ContactsComponent,
+    CategoryComponent,
+    NotpageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routesConFig),
   ],
   providers: [],
   bootstrap: [AppComponent]

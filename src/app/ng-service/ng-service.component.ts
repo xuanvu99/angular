@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NgServiceService} from './ng-service.service';
+import { Component, OnInit } from '@angular/core';
+import { NgServiceService } from './ng-service.service';
 
 @Component({
   selector: 'app-ng-service',
@@ -9,9 +9,9 @@ import {NgServiceService} from './ng-service.service';
 export class NgServiceComponent implements OnInit {
 
   constructor(private service: NgServiceService) {
-    // this.service.getData().subscribe(data => {
-    //   console.log(data)
-    // })
+    this.service.getData().subscribe(data => {
+      console.log(data)
+    })
   }
 
   ngOnInit(): void {
