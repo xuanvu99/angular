@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buoi5.component.css']
 })
 export class Buoi5Component implements OnInit {
-  menus = [{name:'trang chủ', url:'', child: null}, {name:'Hãng sản xuất', url:'', child:['iphone', 'samsung', 'oppo', 'nokia']}, {name:'Tin tức', url:'', child:null}, {name:'Trợ giúp', url:'', child:null}]
+  menus = [{name:'trang chủ', url:'', child: null}, {name:'Hãng sản xuất', url:'', child:[{name:'iphone', url:''}, {name:'macbook', url:''},{name:'ipad', url:''}]}, {name:'Tin tức', url:'', child:null}, {name:'Trợ giúp', url:'', child:null}]
 
   constructor() { }
 

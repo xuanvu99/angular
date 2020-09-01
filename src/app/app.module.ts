@@ -19,6 +19,7 @@ import { NgContentComponent } from './ng-content/ng-content.component';
 import { NgPipesComponent } from './ng-pipes/ng-pipes.component';
 import { NgServiceComponent } from './ng-service/ng-service.component';
 import { Buoi5Component } from './buoi5/buoi5.component';
+import { NgFormComponent } from "./ng-form/ng-form.component";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { Buoi5Component } from './buoi5/buoi5.component';
     NgPipesComponent,
     NgServiceComponent,
     Buoi5Component,
+    NgFormComponent,
   ],
   imports: [
     BrowserModule,
