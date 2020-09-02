@@ -1,5 +1,6 @@
-<form (submit)="onSubmit(formSignIn)" #formSignIn="ngForm">
+<form (submit)="onSubmit(formSignIn.value)" #formSignIn="ngForm">
     <input type="email" name="email" ngModel placeholder="Enter email" required>
     <input type="passwork" name="pass" ngModel placeholder="Enter passwork">
     <button [disabled]="formSignIn.invalid">Submit</button>
 </form>
+{{email}}

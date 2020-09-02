@@ -11,7 +11,7 @@ export class NgFormComponent {
   pass = ''
 
   onSubmit(formSignIn) {
-    console.log(formSignIn.value)
+    console.log(formSignIn.email)
   }
 }
 
