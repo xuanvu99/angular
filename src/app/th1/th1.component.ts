@@ -25,7 +25,7 @@ export class TH1Component implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  bai1() {
     this.s = 0;
     let lt = 1;
     for (let i = 1; i <= this.n; i++) {
@@ -37,7 +37,7 @@ export class TH1Component implements OnInit {
   bai2() {
     this.s2 = 0;
     let s = 1;
-    for (let i = 1; i <= this.x2; i++) {
+    for (let i = 1; i <= this.n2; i++) {
       s += s * i;
       this.s2 = Math.pow(-1, i) * (Math.pow(this.x2, this.n2) / s);
     }
