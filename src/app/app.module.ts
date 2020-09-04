@@ -32,6 +32,9 @@ import { NgFormComponent } from "./ng-form/ng-form.component";
 import { ContactsComponent } from './contacts/contacts.component';
 import { CategoryComponent } from './category/category.component';
 import { NotpageComponent } from './notpage/notpage.component';
+import { AdminModule } from "./admin/admin.module";
+import { UserModule } from "./user/user.module";
+import { TH1Component } from './th1/th1.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import { NotpageComponent } from './notpage/notpage.component';
     ContactsComponent,
     CategoryComponent,
     NotpageComponent,
+    TH1Component,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ import { NotpageComponent } from './notpage/notpage.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routesConFig),
+    UserModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
