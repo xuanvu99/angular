@@ -8,4 +8,6 @@
 <input type="number" [(ngModel)]="n2" placeholder="Nhập n">
 <button *ngIf="x2 != null && n2 != null" (click)="bai2()">Tính</button>
 <div *ngIf="s2">S(x, n) = {{s2}}</div>
-<h4>Bài 3</h4>
+<h4>Bài 5</h4>
+<p>Dãy số: <ng-container *ngFor="let n of arrNum">{{n}}, </ng-container></p>
+<p>Số chính phương trong dãy: <ng-container *ngFor="let n of arrResult">{{n}}, </ng-container></p>

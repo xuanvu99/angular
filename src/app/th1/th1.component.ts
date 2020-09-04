@@ -20,9 +20,16 @@ export class TH1Component implements OnInit {
     { hoten: 'Hoang Thi Dung', diemthi: 8.3 }
   ]
 
+  arrNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  arrResult = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.arrResult = this.arrNum.filter(x => {
+      let sq = Math.sqrt(x);
+      return ((sq - Math.floor(sq)) == 0);
+    });
   }
 
   bai1() {
