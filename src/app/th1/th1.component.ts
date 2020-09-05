@@ -22,7 +22,21 @@ export class TH1Component implements OnInit {
 
   arrNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   arrResult = [];
+  ds = [{ hoten: 'Nguyen Thi Mai', quequan: 'Hung Yen', diemthi: 9 }, { hoten: 'Tran Thi Anh', quequan: 'Ha Noi', diemthi: 7.5 }, { hoten: 'Hoang Thi Dung', quequan: 'Hai Phong', diemthi: 8.3 }];
+  dshs = []
+  list = [{ hoten: 'Nguyen Thi Mai', diemthi: 9 }, { hoten: 'Tran Thi Anh', diemthi: 7.5 }, { hoten: 'Hoang Thi Dung', diemthi: 8.3 }];
+  ls = []
+  arrN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  S = 0;
 
+  A: number;
+  B: number;
+  C: number;
+  X1: number;
+  X2: number;
+  X3: number;
+  X4: number;
+  ALERT: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -30,6 +44,88 @@ export class TH1Component implements OnInit {
       let sq = Math.sqrt(x);
       return ((sq - Math.floor(sq)) == 0);
     });
+
+    this.dshs = this.ds.filter(sv => {
+      return sv.diemthi > 8 && sv.quequan == "Hai Phong";
+    })
+
+    this.ls = this.list.sort((a, b) => {
+      let name1 = a.hoten;
+      let name2 = b.hoten;
+
+      name1 = name1.substring(name1.lastIndexOf(" "), name1.length) + name1.substring(0, name1.lastIndexOf(" "));
+      name2 = name2.substring(name2.lastIndexOf(" "), name2.length) + name2.substring(0, name2.lastIndexOf(" "));
+
+      if (name1 > name2) return 1;
+      if (name1 < name2) return -1;
+      return 0;
+    })
+
+    this.arrN.map(x => {
+      this.S += x > 0 ? x : 0;
+    });
+
+
+  }
+
+  tinh() {
+    let pt = new PhuongTrinh(this.A, this.B, this.C);
+    let giai = pt.giai();
+
+    if (giai == 0) {
+      this.ALERT = "Phương trình vô nghiệm";
+    } else if (giai == 1) {
+      if (pt.X1 < 0) {
+        this.ALERT = "Phương trình vô nghiệm";
+      } else if (pt.X1 == 0) {
+        this.ALERT = "Phương trình có 1 nghiệm";
+        this.X1 = 0;
+      } else {
+        this.ALERT = "Phương trình có 2 nghiệm";
+        this.X1 = Math.sqrt(pt.X1);
+        this.X2 = -Math.sqrt(pt.X1);
+      }
+    } else {
+      if (pt.X1 < 0) {
+        if (pt.X2 < 0) {
+          this.ALERT = "Phương trình vô nghiệm";
+        } else if (pt.X1 == 0) {
+          this.ALERT = "Phương trình có 1 nghiệm";
+          this.X1 = 0;
+        } else {
+          this.ALERT = "Phương trình có 2 nghiệm";
+          this.X1 = Math.sqrt(pt.X2);
+          this.X2 = -Math.sqrt(pt.X2);
+        }
+      } else if (pt.X1 == 0) {
+        if (pt.X2 < 0) {
+          this.ALERT = "Phương trình có 1 nghiệm";
+          this.X1 = 0;
+        } else {
+          this.ALERT = "Phương trình có 3 nghiệm";
+          this.X1 = Math.sqrt(pt.X2);
+          this.X2 = -Math.sqrt(pt.X2);
+          this.X3 = 0;
+        }
+      } else {
+        if (pt.X2 < 0) {
+          this.ALERT = "Phương trình có 2 nghiệm";
+          this.X1 = Math.sqrt(pt.X1);
+          this.X2 = -Math.sqrt(pt.X1);
+        } else if (pt.X2 == 0) {
+          this.ALERT = "Phương trình có 3 nghiệm";
+          this.X1 = Math.sqrt(pt.X1);
+          this.X2 = -Math.sqrt(pt.X1);
+          this.X3 = 0;
+        } else {
+          this.ALERT = "Phương trình có 4 nghiệm";
+          this.X1 = Math.sqrt(pt.X1);
+          this.X2 = -Math.sqrt(pt.X1);
+          this.X3 = Math.sqrt(pt.X2);
+          this.X4 = -Math.sqrt(pt.X2);
+        }
+      }
+    }
   }
 
   bai1() {
@@ -50,4 +146,36 @@ export class TH1Component implements OnInit {
     }
   }
 
+}
+
+export class PhuongTrinh {
+  A: number;
+  B: number;
+  C: number;
+  X1: number;
+  X2: number;
+
+  constructor(A: number, B: number, C: number) {
+    this.A = A;
+    this.B = B;
+    this.C = C;
+  }
+
+  giai() {
+    let delta = this.B * this.B - 4 * this.A * this.C;
+    if (delta < 0) {
+      this.X1 = this.X2 = 0.0;
+      return 0;
+    }
+    else if (delta == 0) {
+      this.X1 = this.X2 = -this.B / (2 * this.A);
+      return 1;
+    }
+    else {
+      delta = Math.sqrt(delta);
+      this.X1 = (-this.B + delta) / (2 * this.A);
+      this.X2 = (-this.B - delta) / (2 * this.A);
+      return 2;
+    }
+  }
 }

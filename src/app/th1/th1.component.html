@@ -9,5 +9,30 @@
 <button *ngIf="x2 != null && n2 != null" (click)="bai2()">Tính</button>
 <div *ngIf="s2">S(x, n) = {{s2}}</div>
 <h4>Bài 5</h4>
-<p>Dãy số: <ng-container *ngFor="let n of arrNum">{{n}}, </ng-container></p>
-<p>Số chính phương trong dãy: <ng-container *ngFor="let n of arrResult">{{n}}, </ng-container></p>
+<p>Dãy số: <ng-container *ngFor="let n of arrNum">{{n}}, </ng-container>
+</p>
+<p>Số chính phương trong dãy: <ng-container *ngFor="let n of arrResult">{{n}}, </ng-container>
+</p>
+<h4>Bài 4</h4>
+<ul>
+    <li *ngFor="let item of dshs">{{item.hoten}}</li>
+</ul>
+<h4>Bài 3</h4>
+<ul>
+    <li *ngFor="let item of ls">{{item.hoten}}</li>
+</ul>
+<h4>Baì 6</h4>
+<p>Dãy số: <ng-container *ngFor="let n of arrNum">{{n}}, </ng-container>
+</p>
+<p>Tổng các phần tử là số dương: {{ S }}</p>
+<h4>Bài 7</h4>
+<p>Nhập A: <input type="number" [(ngModel)]="A" required></p>
+<p>Nhập B: <input type="number" [(ngModel)]="B" required></p>
+<p>Nhập C: <input type="number" [(ngModel)]="C" required></p>
+<button *ngIf="A != 0" (click)="tinh()">Tính</button>
+
+<h3>{{ ALERT }}</h3>
+<p *ngIf="X1 != undefined">x1 = {{ X1 }}</p>
+<p *ngIf="X2 != undefined">x2 = {{ X2 }}</p>
+<p *ngIf="X3 != undefined">x3 = {{ X3 }}</p>
+<p *ngIf="X4 != undefined">x4 = {{ X4 }}</p>
