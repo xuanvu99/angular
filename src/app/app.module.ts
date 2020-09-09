@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 const routesConFig: Routes = [
@@ -67,6 +68,7 @@ import { TH1Component } from './th1/th1.component';
     RouterModule.forRoot(routesConFig),
     UserModule,
     AdminModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

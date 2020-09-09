@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-ng-form',
@@ -7,11 +8,15 @@ import { Component } from '@angular/core';
 })
 
 export class NgFormComponent {
-  email = ''
-  pass = ''
+  formLogin = new FormGroup({
+    email: new FormControl('', Validators.required),
+    pass: new FormControl('')
+  })
 
-  onSubmit(formSignIn) {
-    console.log(formSignIn.email)
+  get email() { return this.formLogin.get('email') }
+
+  onSubmit() {
+    console.log(this.formLogin.value)
   }
 }
 
