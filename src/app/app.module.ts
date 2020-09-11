@@ -39,6 +39,10 @@ import { TH1Component } from './th1/th1.component';
 import { Th2B1Component } from './th2-b1/th2-b1.component';
 import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
+import { ThSibarComponent } from './share/th-sibar/th-sibar.component';
+import { Th2B2Component } from './th2-b2/th2-b2.component';
+import { HeaderBt2Component } from './share/header-bt2/header-bt2.component';
+import { FooterBt2Component } from './share/footer-bt2/footer-bt2.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +69,10 @@ import { FooterComponent } from './share/footer/footer.component';
     Th2B1Component,
     HeaderComponent,
     FooterComponent,
+    ThSibarComponent,
+    Th2B2Component,
+    HeaderBt2Component,
+    FooterBt2Component,
   ],
   imports: [
     BrowserModule,
