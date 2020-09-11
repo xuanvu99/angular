@@ -36,6 +36,9 @@ import { NotpageComponent } from './notpage/notpage.component';
 import { AdminModule } from "./admin/admin.module";
 import { UserModule } from "./user/user.module";
 import { TH1Component } from './th1/th1.component';
+import { Th2B1Component } from './th2-b1/th2-b1.component';
+import { HeaderComponent } from './share/header/header.component';
+import { FooterComponent } from './share/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { TH1Component } from './th1/th1.component';
     CategoryComponent,
     NotpageComponent,
     TH1Component,
+    Th2B1Component,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
